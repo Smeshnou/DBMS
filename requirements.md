@@ -71,6 +71,7 @@ Users (
     role_id INT NOT NULL,
     FOREIGN KEY (role_id) REFERENCES Roles(role_id)
 )
+'''
 
 ### 2. Roles
 - Определяет права доступа пользователей
