@@ -63,7 +63,7 @@
 
 Users (
 
-    user_id INT PRIMARY KEY AUTO_INCREMENT,<br>
+    user_id INT PRIMARY KEY AUTO_INCREMENT,
     username VARCHAR(50) UNIQUE NOT NULL,
     email VARCHAR(100) UNIQUE NOT NULL,
     password VARCHAR(255) NOT NULL,
@@ -78,6 +78,7 @@ Users (
 - Определяет права доступа пользователей
 
 Roles (
+
     role_id INT PRIMARY KEY AUTO_INCREMENT,
     role_name VARCHAR(30) UNIQUE NOT NULL
 )
@@ -86,6 +87,7 @@ Roles (
 - Фиксирует все действия пользователей в системе
 
 UserActivityLog (
+
     log_id INT PRIMARY KEY AUTO_INCREMENT,
     user_id INT NOT NULL,
     action_description TEXT,
@@ -97,6 +99,7 @@ UserActivityLog (
 - Основная информация о книгах
 
 Books (
+
     book_id INT PRIMARY KEY AUTO_INCREMENT,
     title VARCHAR(255) NOT NULL,
     publication_year YEAR,
@@ -109,6 +112,7 @@ Books (
 - Информация об авторах книг
 
 Authors (
+
     author_id INT PRIMARY KEY AUTO_INCREMENT,
     first_name VARCHAR(50) NOT NULL,
     last_name VARCHAR(50) NOT NULL
@@ -118,6 +122,7 @@ Authors (
 - Сведения об издательствах
 
 Publishers (
+
     publisher_id INT PRIMARY KEY AUTO_INCREMENT,
     name VARCHAR(100) UNIQUE NOT NULL
 )
@@ -126,6 +131,7 @@ Publishers (
 - Категории жанров литературы
 
 Genres (
+
     genre_id INT PRIMARY KEY AUTO_INCREMENT,
     genre_name VARCHAR(50) UNIQUE NOT NULL
 )
@@ -134,6 +140,7 @@ Genres (
 - Конкретные физические экземпляры книг
 
 BookCopies (
+
     copy_id INT PRIMARY KEY AUTO_INCREMENT,
     book_id INT NOT NULL,
     is_available BOOLEAN DEFAULT TRUE,
@@ -144,6 +151,7 @@ BookCopies (
 - Информация о выданных книгах
 
 Loans (
+
     loan_id INT PRIMARY KEY AUTO_INCREMENT,
     copy_id INT NOT NULL,
     user_id INT NOT NULL,
@@ -159,6 +167,7 @@ Loans (
 - Записи о забронированных книгах
 
 Reservations (
+
     reservation_id INT PRIMARY KEY AUTO_INCREMENT,
     book_id INT NOT NULL,
     user_id INT NOT NULL,
@@ -173,6 +182,7 @@ Reservations (
 ### 1. BookAuthors 
 
 BookAuthors (
+
     book_id INT,
     author_id INT,
     PRIMARY KEY (book_id, author_id),
@@ -183,6 +193,7 @@ BookAuthors (
 ### 2. BookGenres 
 
 BookGenres (
+    
     book_id INT,
     genre_id INT,
     PRIMARY KEY (book_id, genre_id),
