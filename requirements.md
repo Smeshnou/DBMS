@@ -60,9 +60,10 @@
 
 ### 1. Users
 - Хранит информацию о всех пользователях системы
-'''sql
+
 Users (
-    user_id INT PRIMARY KEY AUTO_INCREMENT,
+
+    user_id INT PRIMARY KEY AUTO_INCREMENT,<br>
     username VARCHAR(50) UNIQUE NOT NULL,
     email VARCHAR(100) UNIQUE NOT NULL,
     password VARCHAR(255) NOT NULL,
@@ -71,7 +72,7 @@ Users (
     role_id INT NOT NULL,
     FOREIGN KEY (role_id) REFERENCES Roles(role_id)
 )
-'''
+
 
 ### 2. Roles
 - Определяет права доступа пользователей
