@@ -157,7 +157,7 @@ Loans (
     user_id INT NOT NULL,
     loan_date DATETIME DEFAULT CURRENT_TIMESTAMP,
     due_date DATE NULL,
-    return_date DATETIME NULL,
+    returned_date DATETIME NULL,
     FOREIGN KEY (copy_id) REFERENCES BookCopies(copy_id),
     FOREIGN KEY (user_id) REFERENCES Users(user_id)
 )
@@ -171,6 +171,7 @@ Reservations (
     book_id INT NOT NULL,
     user_id INT NOT NULL,
     reservation_date DATETIME NOT NULL,
+    due_date DATE NULL,
     returned_date DATETIME NULL,
     FOREIGN KEY (book_id) REFERENCES Books(book_id),
     FOREIGN KEY (user_id) REFERENCES Users(user_id)
